@@ -10,7 +10,7 @@ const getProductListByCriteria = async (req, res, next) => {
   //Adding numeric filters.
   queryFilters = addNumericComparisonFilters(req.query, queryFilters);
 
-  //Query Object.
+  //Prepare query Object.
   let productListQuery = productModel.find(queryFilters);
 
   //Chaining cursor method filters.
