@@ -1,12 +1,14 @@
 const { CustomApiError } = require("../errors/custom-api-error");
 const handleErrors = (error, req, res, next) => {
   if (error instanceof CustomApiError) {
+    console.log(error);
     res.json({
       status: "Failure",
       statusCode: error.statusCode,
       errorMsg: error.message,
     });
   } else {
+    console.log(error);
     res.json({
       status: "Failure",
       statusCode: 500,
